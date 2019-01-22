@@ -3,9 +3,9 @@ var button = document.getElementById('button');
 var textinput = document.getElementById('usertext');
 var timeinput = document.getElementById('usertime');
 var dateinput = document.getElementById('userdate');
-var eventadded = document.getElementById('eventadded');
+var eventlist = document.getElementById('eventlist');
 button.addEventListener('click', function () {
   eventplanner.addEvent(textinput.value, dateinput.value, timeinput.value);
-  eventadded.innerText = 'Event Added!';
+  alert('Event Added');
+  eventlist.innerText = "Events: \n" + eventplanner.listEvents();
 });
-eventplanner.listEvents();

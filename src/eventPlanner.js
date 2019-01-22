@@ -9,10 +9,8 @@ class EventPlanner {
 
   listEvents(){
     for(let i = 0; i < this.events.length; i++){
-    console.log(this.events[i][0])
-    console.log(this.events[i][1])
-    console.log(this.events[i][2])
-  }
-  }
+      return "On " + this.events[i][1] + " at " + this.events[i][2] + " You have: \n" + this.events[i][1];
+    };
+  };
 
 };
