@@ -3,7 +3,7 @@ class EventPlanner {
     this.events = [];
   };
 
-  addEvent (text, date) {
-    this.events.push(['text','date']);
+  addEvent (text, date, time) {
+    this.events.push(['text','date', 'time']);
   };
 };
