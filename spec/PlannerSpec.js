@@ -1,22 +1,24 @@
 describe('EventPlanner', function () {
-  describe('addEvent', function() {
-    can('add an event text event array', function () {
-      var eventplanner;
-      eventplanner = new EventPlanner();
-      eventplanner.addEvent('text', 'date', 'time')
+  describe('#listEvent', function() {
+    var eventplanner;
+    eventplanner = new EventPlanner();
+    eventplanner.addEvent('text', 'date', 'time')
+    eventplanner.addEvent('text2', 'date2', 'time2')
+    eventplanner.addEvent('text3', 'date3', 'time3')
+    can('have multiple events and read them all', function () {
       expect(eventplanner.events[0][0]).toEq('text')
+      expect(eventplanner.events[1][1]).toEq('date2')
+      expect(eventplanner.events[2][2]).toEq('time3')
     });
-    can('add an event date to event array', function(){
-      var eventplanner2;
-      eventplanner2 = new EventPlanner();
-      eventplanner2.addEvent('text', 'date', 'time')
-      expect(eventplanner2.events[0][1]).toEq('date')
-    });
-    can('add an event time to event array', function(){
-      var eventplanner3;
-      eventplanner3 = new EventPlanner();
-      eventplanner3.addEvent('text', 'date', 'time')
-      expect(eventplanner3.events[0][2]).toEq('time')
+  });
+  describe('#addEvent', function () {
+    var eventplanner;
+    eventplanner = new EventPlanner();
+    eventplanner.addEvent('a', 'b', 'c')
+    can('add an event', function () {
+      expect(eventplanner.events[0][0]).toEq('a')
+      expect(eventplanner.events[0][1]).toEq('b')
+      expect(eventplanner.events[0][2]).toEq('c')
     });
   });
 });
